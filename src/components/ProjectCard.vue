@@ -18,4 +18,16 @@ export default {
 </template>
   
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+</style>

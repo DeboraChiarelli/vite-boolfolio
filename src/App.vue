@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       projects: [],
-      BASE_URL: 'http://localhost:8000/api'
+      BASE_URL: 'http://127.0.0.1:8000/api'
     };
   },
   methods: {
@@ -45,4 +45,22 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+</style>
