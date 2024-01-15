@@ -16,8 +16,8 @@ export default {
     fetchProjects() {
       axios.get(`${this.BASE_URL}/projects`)
         .then((res) => {
-          console.log(res);
-          this.projects = res.data;
+          console.log(res.data.results);
+          this.projects = res.data.results;
         });
     }
   },
@@ -38,7 +38,7 @@ export default {
     <div class="container">
       <div>
         <div v-for="project in projects" :key="project.id" class="card project-card">
-          <h2>{{ project.title }}</h2>
+          <ProjectCard :project="project" />
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@ export default {
 }
 
 .project-card {
-  background-color: #fff;
+  /* background-color: #fff;*/
   border: 1px solid #ddd;
   padding: 20px;
   margin-bottom: 20px;

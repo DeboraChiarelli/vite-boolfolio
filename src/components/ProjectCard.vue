@@ -13,14 +13,14 @@ export default {
 <template>
     <div class="card project-card">
         <h2>{{ project.title }}</h2>
-
+        <p> {{ project.description }}</p>
     </div>
 </template>
   
 
 <style lang="scss" scoped>
 .card {
-    background-color: #fff;
+    /* background-color: #fff; */
     border: 1px solid #ddd;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
