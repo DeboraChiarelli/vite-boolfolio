@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{ pageTitle }}</h1>
+        <h1>Contattaci</h1>
         <p>Email: {{ email }}</p>
         <p>Telefono: {{ phoneNumber }}</p>
     </div>
@@ -12,7 +12,7 @@ export default {
         return {
             pageTitle: 'Contattaci',
             email: 'info@example.com',
-            phoneNumber: 'xxx-xxxx',
+            phoneNumber: 'xxx-xxxxxxx',
         };
     },
     created() {
@@ -20,5 +20,5 @@ export default {
     },
 };
 </script>
-
+  
 <style scoped></style>

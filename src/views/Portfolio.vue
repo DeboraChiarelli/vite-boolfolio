@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Portfolio</h1>
+        <h1>Portfolio Page</h1>
         <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
     </div>
 </template>
@@ -19,5 +19,3 @@ export default {
     },
 };
 </script>
-  
-<style scoped></style>

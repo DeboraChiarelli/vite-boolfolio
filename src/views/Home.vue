@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>{{ welcomeMessage }}</h1>
-        <p>{{ formattedMessage }}</p>
+        <h1>Benvenuto nel nostro sito!</h1>
+        <p>Grazie per la visita!</p>
         <button @click="changeMessage">Cambia Messaggio</button>
     </div>
 </template>
@@ -29,5 +29,5 @@ export default {
     },
 };
 </script>
-
+  
 <style scoped></style>
