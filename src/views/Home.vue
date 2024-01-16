@@ -1,8 +1,10 @@
 <template>
     <div>
-        <h1>Benvenuto nel nostro sito!</h1>
-        <p>Grazie per la visita!</p>
+        <h1>{{ welcomeMessage }}</h1>
+        <p>{{ formattedMessage }}</p>
         <button @click="changeMessage">Cambia Messaggio</button>
+        <!-- Router-link per la pagina Portfolio -->
+        <router-link to="/portfolio">Vai alla Pagina Portfolio</router-link>
     </div>
 </template>
   
