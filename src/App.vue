@@ -29,19 +29,7 @@ export default {
 
 <template>
   <div>
-    <div class="container">
-      <h1>
-        Lista Progetti
-      </h1>
-    </div>
-
-    <div class="container">
-      <div>
-        <div v-for="project in projects" :key="project.id" class="card project-card">
-          <ProjectCard :project="project" />
-        </div>
-      </div>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
