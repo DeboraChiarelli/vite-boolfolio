@@ -1,37 +1,46 @@
+<template>
+  <div>
+    <router-view :projects="projects" :currentPage="currentPage" :totalPages="totalPages" :onPageChange="onPageChange" />
+  </div>
+</template>
+
 <script>
 import axios from 'axios';
 import ProjectCard from './components/ProjectCard.vue';
+import Portfolio from './views/Portfolio.vue';
 
 export default {
   components: {
-    ProjectCard
+    ProjectCard,
+    Portfolio,
   },
   data() {
     return {
       projects: [],
-      BASE_URL: 'http://127.0.0.1:8000/api'
+      currentPage: 1,
+      totalPages: 1,
+      BASE_URL: 'http://127.0.0.1:8000/api',
     };
   },
   methods: {
-    fetchProjects() {
-      axios.get(`${this.BASE_URL}/projects`)
+    fetchProjects(page = 1) {
+      axios.get(`${this.BASE_URL}/projects?page=${page}`)
         .then((res) => {
           console.log(res.data.results);
-          this.projects = res.data.results;
+          this.projects = res.data.results.data;
+          this.totalPages = res.data.results.last_page;
+          this.currentPage = res.data.results.current_page;
         });
-    }
+    },
+    onPageChange(newPage) {
+      this.fetchProjects(newPage);
+    },
   },
   created() {
     this.fetchProjects();
-  }
-}
+  },
+};
 </script>
-
-<template>
-  <div>
-    <router-view></router-view>
-  </div>
-</template>
 
 <style lang="scss" scoped>
 .container {
@@ -40,7 +49,6 @@ export default {
 }
 
 .project-card {
-  /* background-color: #fff;*/
   border: 1px solid #ddd;
   padding: 20px;
   margin-bottom: 20px;
