@@ -11,6 +11,7 @@
                 </li>
             </ul>
         </div>
+        <!-- Router-link per la oagina Home -->
         <router-link to="/">Torna alla Home</router-link>
     </div>
 </template>
