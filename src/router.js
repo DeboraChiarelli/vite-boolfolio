@@ -27,6 +27,11 @@ const router = createRouter({
             name: 'contacts',
             component: Contact,
         },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: NotFound,
+        },
     ],
 });
 
